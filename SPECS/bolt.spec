@@ -1,10 +1,11 @@
 Name:          bolt
-Version:       0.9.5
+Version:       0.9.7
 Release:       1%{?dist}
 Summary:       Thunderbolt device manager
 License:       LGPLv2+
 URL:           https://gitlab.freedesktop.org/bolt/bolt
 Source0:       %{url}/-/archive/%{version}/%{name}-%{version}.tar.gz
+Patch0:        0001-test-test-unix-skip-unix-domain-socket-test.patch
 
 BuildRequires: gcc
 BuildRequires: asciidoc
@@ -76,6 +77,10 @@ mentioned tasks.
 %ghost %dir %{_localstatedir}/lib/boltd
 
 %changelog
+* Tue Mar 26 2024 Kate Hsuan <hpa@redhat.com> - 0.9.7-1
+- Update to upstream release 0.9.7
+- Support 'nopcie' security level
+
 * Mon Jan 9 2023 Kate Hsuan <hpa@redhat.com> - 0.9.5-1
 - New 0.9.5 upstream release
 
